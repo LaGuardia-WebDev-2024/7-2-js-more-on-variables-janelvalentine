@@ -6,6 +6,8 @@ void setup() {
 //🎯Varaible Declarations Go Here
 var x = 200;
 var y = 100;
+var mouthSize = (300);
+
 
 //🟢Draw Procedure - Runs on Repeat
 void draw(){
@@ -14,16 +16,26 @@ void draw(){
   //💡⬇️⬇️⬇️💡 Your Code For This Unit Goes Here
   
   noStroke();
-  fill(30, 204, 91); // a nice froggy green!
+  fill(203, 150, 26); // a nice froggy green!
 
-  ellipse(x, y, 200, 100); // face
+  ellipse(x, y, 400, 100); // face
   ellipse(x - 50, y - 50, 40, 40); // left eye socket
   ellipse(x + 50, y - 50, 40, 40); // right eye socket
 
   fill(255, 255, 255); // for the whites of the eyes!
   ellipse(x - 50, y - 50, 30, 30); // left eyeball
   ellipse(x + 50, y - 50, 30, 30); // right eyeball
-  
+  fill(0,0,0)
+  ellipse(x-50, y- 50, 20, 20);
+ellipse(x+ 50, y - 50, 20, 20);
+
+fill(200, 0, 0);
+ellipse(x, y, mouthSize, 30)
+
+
+x = mouseX
+y = mouseY
+x++
 
 }
 
@@ -45,7 +57,12 @@ void mousePressed(){
   text(myText, mouseX + 15, mouseY);
   console.log(myText);
   
-  eyeSize = eyeSize + 1;
+
+  mouthSize = mouthSize +8;
+  
+  if (mouthSize>400){
+  mouthSize = 300;
+  }
 }
 
 //🟡Key Pressed Procedure - Runs When Keyboard Key is Pressed
